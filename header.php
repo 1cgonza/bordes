@@ -50,4 +50,3 @@
 	</header>
 
 	<div class="site-content">
-<?php //var_dump($popocaca); ?>
