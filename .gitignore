@@ -10,4 +10,4 @@ yarn-error.log*
 
 logs/
 node_modules/
-bower_components/
+.vscode
