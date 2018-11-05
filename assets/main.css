@@ -9,3 +9,23 @@ html, body {
   margin: 0;
   padding: 0; }
 
+#audioPlayer {
+  position: fixed;
+  bottom: 10px;
+  width: 90%;
+  left: 5%;
+  z-index: 9999; }
+
+#stage {
+  z-index: 0; }
+
+.vids {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%; }
+  .vids iframe {
+    width: 230px;
+    height: 128px; }
+    .vids iframe .ytp-button {
+      display: none; }
+

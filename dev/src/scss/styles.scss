@@ -11,3 +11,34 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+body {
+  background-image: url('../imgs/noisy-texture-100x100-o27-d21-c-d6abb9-t0.png');
+}
+
+#audioPlayer {
+  position: fixed;
+  bottom: 10px;
+  width: 90%;
+  left: 5%;
+  z-index: 9999;
+}
+
+#stage {
+  z-index: 0;
+}
+
+.vids {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  iframe {
+    width: 230px;
+    height: 128px;
+
+    .ytp-button {
+      display: none;
+    }
+  }
+}

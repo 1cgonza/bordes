@@ -11,4 +11,3 @@ Bogotá, Colombia
 ## WP Plugins
 
 - CMB2
-- CMB2 Admin Extension

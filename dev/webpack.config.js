@@ -17,15 +17,6 @@ module.exports = {
         }
       },
       {
-        test: /\.html$/,
-        use: [
-          {
-            loader: 'html-loader',
-            options: {minimize: true}
-          }
-        ]
-      },
-      {
         test: /\.(scss|css)$/,
         use: [
           MiniCssExtractPlugin.loader,
@@ -53,6 +44,12 @@ module.exports = {
             options: {}
           }
         ]
+      },
+      {
+        test: /\.(ico|gif|png|jpe?g|svg)&/,
+        use: {
+          loader: 'file-loader'
+        }
       }
     ]
   },

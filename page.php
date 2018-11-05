@@ -1,9 +1,4 @@
-<?php
-/**
- * This is the default page template file
- */
-
-get_header(); ?>
+<?php get_header(); ?>
 
 <main class="page-container grid-container"  role="main">
   <div class="grid-x grid-padding-x">

@@ -1,7 +1,7 @@
 <?php
 // Register Menus
 register_nav_menus(array(  
-  'home' => __( 'Home', 'bordes' ),  
+  'home' => __('Home', 'bordes')  
 ));
 
 // Menu fallback
