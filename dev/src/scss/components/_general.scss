@@ -1,0 +1,91 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+::selection {
+  background-color: rgba(249, 232, 83, 0.85);
+  color: black;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.8;
+  font-family: $baseFont;
+  font-weight: 400;
+  background-color: #f5e6e6;
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+a,
+a:link {
+  color: #cc5f5f;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 2em;
+  text-align: center;
+  letter-spacing: 0.4em;
+  margin: 4em 0 3em 0;
+}
+
+h2 {
+  font-size: 1.6em;
+}
+
+h3 {
+  font-size: 1.4em;
+  letter-spacing: 0.2em;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+h5,
+h6 {
+  font-size: 1em;
+}
+
+p {
+  margin: 1em 0;
+}
+
+blockquote {
+  font-style: italic;
+  text-align: right;
+  width: 50%;
+  margin: 0 0 0 auto;
+  padding: 2em;
+  line-height: 1;
+}
+
+.bordesGallery {
+  text-align: center;
+  margin: 4em 0;
+  figure {
+    display: inline-block;
+    padding: 0 1em;
+    vertical-align: middle;
+  }
+}
+
+.velb {
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}

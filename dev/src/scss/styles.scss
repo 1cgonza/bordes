@@ -1,44 +1,16 @@
-html {
-  box-sizing: border-box;
-  height: 100%;
+@import './components/reset';
+@import './components/typo';
+@import './components/general';
+@import './components/grid';
+@import './breakpoints/base';
+@media only screen and (min-width: 768px) {
+  @import './breakpoints/768up';
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
+@media only screen and (min-width: 1030px) {
+  @import './breakpoints/1030up';
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-image: url('../imgs/noisy-texture-100x100-o27-d21-c-d6abb9-t0.png');
-}
-
-#audioPlayer {
-  position: fixed;
-  bottom: 10px;
-  width: 90%;
-  left: 5%;
-  z-index: 9999;
-}
-
-#stage {
-  z-index: 0;
-}
-
-.vids {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-
-  iframe {
-    width: 230px;
-    height: 128px;
-
-    .ytp-button {
-      display: none;
-    }
-  }
+@media only screen and (min-width: 1240px) {
+  @import './breakpoints/1240up';
 }
