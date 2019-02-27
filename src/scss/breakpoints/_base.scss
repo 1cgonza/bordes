@@ -3,7 +3,7 @@
     top: 32px;
   }
   nav {
-    top: 86px;
+    top: 76px;
   }
 }
 
@@ -22,9 +22,30 @@
 nav {
   position: fixed;
   z-index: 99;
-  top: 53px;
+  top: 44px;
+  height: 100%;
   background-color: #292828;
   padding: 1em;
+  a,
+  a:visited {
+    color: cornsilk;
+    &:hover {
+      color: darken(cornsilk, 20%);
+    }
+  }
+}
+
+.siteMain {
+  display: block;
+  height: 100%;
+  margin-left: auto;
+}
+
+.tagsWrapper {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  position: relative;
 }
 
 #audioPlayer {
@@ -72,11 +93,11 @@ nav {
 }
 
 #info {
-  position: absolute;
-  width: 60vw;
-  height: 80vh;
-  top: 15vh;
-  left: 20vw;
+  position: fixed;
+  width: 40vw;
+  height: 100vh;
+  top: 44px;
+  right: 0;
   background-color: rgb(37, 37, 37);
   color: white;
   padding: 2em;
@@ -95,30 +116,39 @@ nav {
     font-size: 1.3em;
     margin-bottom: 1em;
     letter-spacing: 0.5em;
+    text-align: right;
   }
   .postsWrapper {
     display: flex;
-    align-items: flex-start;
+    align-items: baseline;
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
   .post {
     position: relative;
-    width: 40%;
+    width: 300px;
     margin-bottom: 2em;
     .postImg {
       z-index: 2;
+      line-height: 0;
       img {
         width: 100%;
         height: auto;
       }
     }
     .postTitle {
-      text-align: center;
-      width: 100%; //position: absolute;
+      line-height: 1.2;
+      font-size: 0.85em;
+      width: 100%;
       z-index: 3;
-      top: 0; //color: red;
+      top: 0;
       display: block;
+      background-color: cornsilk;
+      color: black;
+      padding: 1em;
+      font-weight: bold;
+      font-style: italic;
+      letter-spacing: 0.2em;
     }
   }
 }

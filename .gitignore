@@ -10,5 +10,5 @@ yarn-error.log*
 
 logs/
 node_modules/
-assets/
+dist/
 .vscode

@@ -3,7 +3,7 @@ import Brain from './Brain';
 const twoPi = Math.PI * 2;
 
 export default class Point {
-  constructor(brain, ele, index, x, y, maxPoints) {
+  constructor(brain, ele) {
     this.brain = brain;
     this.ele = ele;
     this.fonts = [
@@ -25,22 +25,15 @@ export default class Point {
       'Arial Black',
       'Impact'
     ];
-    this.coord = {
-      x: x,
-      y: y
-    };
-    this.edges = {
-      right: this.brain.stageW - this.ele.offsetWidth - 100,
-      bottom: this.brain.stageH - this.ele.offsetHeight - 100
-    };
+
     this.angle = rand(0, twoPi);
     this.speed = rand(0.2, 2.5);
     this.velocity = {
       x: Math.cos(this.angle) * this.speed,
       y: Math.sin(this.angle) * this.speed
     };
-    this.radius = index == maxPoints - 1 ? 50 : rand(3, 10);
-    this.master = index == maxPoints - 1;
+
+    this.resize();
 
     this.ele.onmouseover = () => {
       this.velocity = {
@@ -94,9 +87,28 @@ export default class Point {
     };
   }
 
+  resize() {
+    const sw = this.brain.stageW;
+    const sh = this.brain.stageH;
+    const pad = sw / 60;
+
+    this.edges = {
+      top: 44 + pad,
+      right: sw - this.ele.offsetWidth - pad - 25,
+      bottom: sh - this.ele.offsetHeight - pad,
+      left: pad
+    };
+
+    this.coord = {
+      x: rand(200, sw - this.ele.offsetWidth - 300),
+      y: rand(200, sh - this.ele.offsetHeight - 100)
+    };
+  }
+
   render(ctx, nextPoint, index) {
     this.ele.style.left = `${this.coord.x}px`;
     this.ele.style.top = `${this.coord.y}px`;
+
     if (Math.random() > 0.9) {
       this.ele.style.fontFamily = this.fonts[
         Math.floor(Math.random() * this.fonts.length)
@@ -127,22 +139,11 @@ export default class Point {
     this.coord.y += this.velocity.y;
   }
 
-  collision(nextPoint) {
-    return (
-      this.coord.x == nextPoint.coord.x || this.coord.y == nextPoint.coord.y
-    );
-  }
-
   canvasBoundsX() {
-    return (
-      this.coord.x > this.edges.right || this.coord.x < this.ele.offsetWidth
-    );
+    return this.coord.x > this.edges.right || this.coord.x < this.edges.left;
   }
 
   canvasBoundsY() {
-    return (
-      this.coord.y > this.edges.bottom ||
-      this.coord.y < this.ele.offsetHeight + 100
-    );
+    return this.coord.y > this.edges.bottom || this.coord.y < this.edges.top;
   }
 }

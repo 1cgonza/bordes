@@ -5,7 +5,7 @@ if (document.querySelector('.home')) {
   const brain = new Brain(document.querySelectorAll('.tag'));
   brain.loop();
 
-  let modal = document.getElementById('info');
+  const modal = document.getElementById('info');
 
   document.onmouseup = e => {
     if (modal.classList.contains('active')) {

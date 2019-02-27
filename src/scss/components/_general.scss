@@ -35,6 +35,9 @@ a,
 a:link {
   color: #cc5f5f;
   text-decoration: none;
+  &:hover {
+    color: darken(#cc5f5f, 20%);
+  }
 }
 
 h1 {
