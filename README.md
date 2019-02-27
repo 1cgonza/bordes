@@ -13,3 +13,5 @@ Bogotá, Colombia
 ## WP Plugins
 
 - CMB2
+- CMB2 Field Type: Attached Posts
+- Add Featured Image Column
