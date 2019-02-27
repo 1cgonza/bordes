@@ -1,5 +1,7 @@
 # Viviendo en los Bordes
 
+![Viviendo en los Bordes](./screenshot.png)
+
 Plantilla de WordPress para el proyecto Viviendo en los Bordes.
 
 Dirección: Cecilia Traslaviña
