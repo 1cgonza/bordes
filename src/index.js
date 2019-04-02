@@ -1,7 +1,7 @@
 import sass from './scss/styles.scss';
 import Brain from './js/components/Brain';
 
-if (document.querySelector('.home')) {
+if (document.querySelector('.tagsWrapper')) {
   const brain = new Brain(document.querySelectorAll('.tag'));
   brain.loop();
 
@@ -14,4 +14,12 @@ if (document.querySelector('.home')) {
       }
     }
   };
+}
+
+const participants = document.querySelectorAll('.participantsMenu li');
+
+for (let i = 0; i < participants.length; i++) {
+  const ele = participants[i];
+  ele.onclick = e => {};
+  console.log();
 }

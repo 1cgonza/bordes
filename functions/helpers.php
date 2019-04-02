@@ -14,13 +14,13 @@ function getRelatedPosts($post) {
       'post__not_in' => array($post->ID),
       'posts_per_page' => -1
     );
-    $my_query = new wp_query($args);
+    $q = new WP_Query($args);
 
-    if ($my_query->have_posts()) {
+    if ($q->have_posts()) {
       $ret .= '<h3>Relacionados</h3><ul>';
 
-      while ($my_query->have_posts()) {
-        $my_query->the_post();
+      while ($q->have_posts()) {
+        $q->the_post();
 
         $ret .= '<li>';
         $ret .= '<div class="relatedcontent">';
@@ -28,8 +28,38 @@ function getRelatedPosts($post) {
         $ret .= '</div>';
         $ret .= '</li>';
       }
+      wp_reset_postdata();
       $ret .= '</ul>';
     }
   }
+  return $ret;
+}
+
+function getParticipants() {
+  $ret = '';
+  $args = array(
+    'post_type' => 'participants',
+    'posts_per_page' => -1,
+    'orderby' => 'title',
+	  'order' => 'ASC',
+  );
+  $q = new WP_Query($args);
+
+  if ($q->have_posts()) {
+    $ret .= '<ul>';
+
+    while ($q->have_posts()) {
+      $q->the_post();
+
+      $ret .= '<li>';
+      $ret .= '<span class="participantImg">' . get_the_post_thumbnail($q->post->ID, 'thumbnail') . '</span>';
+      $ret .= '<span class="participantName">' . get_the_title() . '</span>';
+      $ret .= '</li>';
+    }
+    wp_reset_postdata();
+
+    $ret .= '</ul>';
+  }
+
   return $ret;
 }

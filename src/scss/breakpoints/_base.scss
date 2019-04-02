@@ -1,15 +1,21 @@
+$padTopAdmin: 30px;
+$padTop: 44px;
+$darkBg: #292828;
+$titlesColor: cornsilk;
 .logged-in {
   .siteHeader {
     top: 32px;
   }
-  nav {
-    top: 76px;
+  nav,
+  .participantsMenu,
+  #info {
+    top: $padTopAdmin;
   }
 }
 
 .siteHeader {
-  background-color: #292828;
-  color: cornsilk;
+  background-color: $darkBg;
+  color: $titlesColor;
   padding: 0.5em;
   text-align: center;
   letter-spacing: 2vw;
@@ -19,18 +25,40 @@
   z-index: 99999;
 }
 
-nav {
+.homeNav {
   position: fixed;
-  z-index: 99;
-  top: 44px;
+  top: $padTop;
   height: 100%;
-  background-color: #292828;
+  .sub-menu {
+    padding-left: 0.5em;
+    font-size: 0.85em;
+  }
+}
+
+.homeNav {
+  position: relative;
+  z-index: 99;
+  height: auto;
+  background-color: $darkBg;
   padding: 1em;
   a,
   a:visited {
-    color: cornsilk;
+    color: $titlesColor;
     &:hover {
-      color: darken(cornsilk, 20%);
+      color: darken($titlesColor, 20%);
+    }
+  }
+  .current-menu-item {
+    a,
+    a:visited {
+      color: darken($titlesColor, 20%);
+    }
+  }
+  .sub-menu {
+    font-size: 0.85em;
+    li {
+      line-height: 1.2;
+      padding: 0.2em 0.4em;
     }
   }
 }
@@ -86,7 +114,7 @@ nav {
   padding: 1em;
   &:hover {
     background-color: black;
-    color: white;
+    color: $titlesColor;
     z-index: 99;
   }
   z-index: 2;
@@ -94,18 +122,17 @@ nav {
 
 #info {
   position: fixed;
-  width: 40vw;
   height: 100vh;
-  top: 44px;
+  top: $padTop;
   right: 0;
-  background-color: rgb(37, 37, 37);
-  color: white;
+  background-color: $darkBg;
+  color: $titlesColor;
   padding: 2em;
   display: none;
   overflow: auto;
   a,
   a:link {
-    color: white;
+    color: $titlesColor;
   }
   &.active {
     display: block;
@@ -143,7 +170,7 @@ nav {
       z-index: 3;
       top: 0;
       display: block;
-      background-color: cornsilk;
+      background-color: $titlesColor;
       color: black;
       padding: 1em;
       font-weight: bold;
@@ -157,6 +184,7 @@ nav {
   .postLink {
     padding: 1em 0;
     width: 30%;
+    line-height: 1.2;
     &.nextLink {
       text-align: right;
     }
@@ -172,15 +200,29 @@ nav {
     }
   }
   #content,
-  #relted {
-    width: 100%;
+  #related {
+    margin: 0 auto;
+  }
+  #tags {
+    margin: 5em 0 5em 0;
   }
   #content {
+    .participantHeader {
+      align-items: center;
+    }
+    .participantThumb {
+      line-height: 0;
+      max-width: 300px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
     .participantName {
-      margin: 1em;
+      width: 30vw;
+      margin: 1em 0;
     }
     .participantBio {
-      width: 80%;
       margin: 0 auto;
     }
   }
@@ -198,4 +240,11 @@ nav {
 #related {
   margin-top: 4em;
   text-align: center;
+}
+
+.single-participants {
+  padding-bottom: 8em;
+  .tagsWrapper {
+    height: 80vh;
+  }
 }

@@ -1,5 +1,30 @@
+$padTopAdmin: 76px;
+$padTop: 44px;
+$darkBg: #292828;
+$titlesColor: cornsilk;
+.logged-in {
+  .siteHeader {
+    top: 32px;
+  }
+  nav,
+  .participantsMenu,
+  #info {
+    top: $padTopAdmin;
+  }
+}
+
 .single {
   #top {
     height: 50vh;
+  }
+}
+
+.homeNav {
+  position: fixed;
+  top: $padTop;
+  height: 100%;
+  .sub-menu {
+    padding-left: 0.5em;
+    font-size: 0.85em;
   }
 }

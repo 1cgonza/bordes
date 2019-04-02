@@ -1,5 +1,6 @@
 <?php 
-$page = get_queried_object();
+$participants = getParticipants();
+
 ?><!DOCTYPE html>
 <!--[if lte IE 11]><html <?php language_attributes(); ?> class="no-js lte-ie11"> <![endif]-->
 <!--[if gte IE 11]><!--><html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
@@ -13,7 +14,7 @@ $page = get_queried_object();
 
 <body <?php body_class(); ?>>
   <header class="siteHeader"><?php bloginfo('name'); ?></header>
-  <nav class="homeNav">
+  <nav class="homeNav m-100 t-20 d-20 ld-10">
     <ul>
       <?php wp_nav_menu(array(
         'theme_location' => 'home',
@@ -22,4 +23,6 @@ $page = get_queried_object();
       )); ?>
     </ul>
   </nav>
-  <main class="siteMain" role="main">
+  <!-- <div class="participantsMenu"><?php //echo $participants; ?></div> -->
+  <main class="siteMain m-100 t-80 d-80 ld-90" role="main">
+  
